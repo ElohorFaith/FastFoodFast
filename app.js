@@ -1,10 +1,13 @@
 import express from 'express';
+import router from './routes/orderRouter';
 
 const app = express();
 
 app.set('port', process.env.PORT || 5000);
 
-app.get('/', (req, res) => {
+app.use('/api/v1/', router);
+
+app.get('*', (req, res) => {
   res.send('Welcome to FastFoodFast API');
 });
 
