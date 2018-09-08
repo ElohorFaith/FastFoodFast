@@ -12,5 +12,7 @@ router.get('/orders/:id', orderController.getOneOrder);
 // create order
 router.post('/orders', orderController.createOrder);
 
+// edit an order
+router.put('/orders/:id', orderController.editAnOrder);
 
 export default router;
