@@ -9,5 +9,8 @@ router.get('/orders', orderController.getOrders);
 // get one order
 router.get('/orders/:id', orderController.getOneOrder);
 
+// create order
+router.post('/orders', orderController.createOrder);
+
 
 export default router;

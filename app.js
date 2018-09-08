@@ -1,9 +1,13 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import router from './routes/orderRouter';
 
 const app = express();
 
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 5001);
+
+// use body parser to parse request
+app.use(bodyParser.json());
 
 app.use('/api/v1/', router);
 
