@@ -5,12 +5,6 @@ node_js:
 
 before_script:
   - npm install -g codeclimate-test-reporter
-  - psql -c 'drop database if exists eventdb_test;' -U postgres
-  - psql -c 'create database eventdb_test;' -U postgres
-  - npm run migrate:test
-
-services:
-  - postgresql
 
 script:
   - npm test

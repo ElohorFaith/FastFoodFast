@@ -4,10 +4,14 @@
   "description": "A food delivery app",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon --exec babel-node app.js",
+    "start:dev": "nodemon --exec babel-node server/app.js",
+    "clean": "rimraf ./dist",
+    "build:server": "npm run clean && babel server --out-dir dist --copy-files",
     "lint": "eslint --fix app",
-    "test": "cross-env NODE_ENV=test nyc --reporter=text --reporter=lcov mocha --require babel-register ./tests/**.spec.js --exit",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "test": "cross-env NODE_ENV=test nyc --reporter=text --reporter=lcov mocha --require babel-register ./server/tests/**.spec.js --exit",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "postinstall": "npm run build:server",
+    "start": "node ./dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -42,6 +46,7 @@
     "mocha": "^5.2.0",
     "nodemon": "^1.17.5",
     "prettier": "^1.14.2",
+    "rimraf": "^2.6.2",
     "supertest": "^3.3.0"
   },
   "devDependencies": {
