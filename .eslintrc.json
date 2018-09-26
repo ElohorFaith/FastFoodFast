@@ -6,15 +6,8 @@
     "es6": true,
     "mocha": true
   },
-  "plugins": [
-  "react"
-  ],
-
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-    "jsx": true
-    }
+    "sourceType": "module"
   }
 }

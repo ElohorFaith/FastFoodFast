@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use('/api/v1/', router);
 
 app.get('*', (req, res) => {
-  res.send('Welcome to FastFoodFast API');
+  res.json({ message: 'Welcome to Priceless API Page' });
 });
 
 app.listen(app.get('port'), () => {

@@ -62,6 +62,13 @@
     width:100%;
     min-height:300px;
 }
+#food-opt2 {
+    padding: 10px 20px;
+    margin-right: 60px;
+    width: 70%;
+    min-height: 300px;
+    margin-left: 200px;
+}
 
 ol li {
     color: black;
