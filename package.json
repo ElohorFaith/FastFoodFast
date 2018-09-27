@@ -4,14 +4,14 @@
   "description": "A food delivery app",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon --exec babel-node server/app.js",
+    "start:dev": "cross-env NODE_ENV=development  babel-node server/app.js ",
     "clean": "rimraf ./dist",
     "build:server": "npm run clean && babel server --out-dir dist --copy-files",
     "lint": "eslint --fix app",
     "test": "cross-env NODE_ENV=test nyc --reporter=text --reporter=lcov mocha --require babel-register ./server/tests/**.spec.js --exit",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "postinstall": "npm run build:server",
-    "start": "node ./dist/app.js"
+    "start": "npm run build:server && node ./dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,7 @@
     "chai": "^4.1.2",
     "chai-http": "^4.2.0",
     "cross-env": "^5.2.0",
+    "dotenv": "^6.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
@@ -45,6 +46,7 @@
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "nodemon": "^1.17.5",
+    "pg": "^7.4.3",
     "prettier": "^1.14.2",
     "rimraf": "^2.6.2",
     "supertest": "^3.3.0"
