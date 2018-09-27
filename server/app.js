@@ -1,18 +1,19 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import router from './routes/orderRouter';
+import router from './routes/index';
 
 const app = express();
 
 app.set('port', process.env.PORT || 5001);
 
 // use body parser to parse request
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/api/v1/', router);
 
 app.get('*', (req, res) => {
-  res.send('Welcome to FastFoodFast API');
+  res.json({ messsage: 'Welcome to FastFoodFast API' });
 });
 
 app.listen(app.get('port'), () => {
