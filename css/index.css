@@ -316,7 +316,7 @@ a#one {
     color: white;
     padding-top: 20px;
     font-family: 'Courier New', Courier, monospace;
-    position: fixed;
+    
 }
 .menu {
     width: 70%;
@@ -391,7 +391,45 @@ tr:nth-child(even) {
 .z-depth-2 {
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+ .food {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     width: 32%;
+     margin: 1%;
+     text-align: center;
+ }
+ 
+ .price {
+     color: grey;
+     font-size: 18px;
+ }
+ 
+ .button-food {
+     border: none;
+     outline: 0;
+     display: inline-block;
+     padding: 8px;
+     color: white;
+     background-color:red;
+     text-align: center;
+     cursor: pointer;
+     width: 100%;
+     font-size: 18px;
+ }
+ .button-food:hover{
+     opacity: 0.7;
+ }
+ 
+ 
+ #admin {
+     margin-left: 70px;
+ }
 
+ .order-food{
+     width: 100%;
+    display: flex;
+ }
+
+ 
 @media screen and (max-width: 600px) {
     .navbar a:not(:first-child) {display: none;}
     .navbar a.icon {
@@ -413,303 +451,13 @@ tr:nth-child(even) {
         text-align: left;
     }
 }
-
-.food {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    margin-left: 60px;  
+@media screen and (max-width: 480px) {
+    .food {
+        width: 90%;
+    }
+  .order-food {
+      display: block;
+      margin: 0 3%;
+  }
 }
-
-.price {
-    color: grey;
-    font-size: 18px;
-}
-
-.button-food {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color:red;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.button-food:hover{
-    opacity: 0.7;
-}
-
-.food2 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    margin-left: 35%;
-    margin-top: -18%;
-}
-
-.price2 {
-    color: grey;
-    font-size: 18px;
-}
-
-.button-food2 {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: red;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.button-food2:hover{
-    opacity: 0.7;
-}
-
-
-.food3 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    margin-left: 65%;
-    margin-top: -18%;
-}
-
-.price3 {
-    color: grey;
-    font-size: 18px;
-}
-
-.button-food3 {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: red;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.button-food3:hover{
-    opacity: 0.7;
-}
-
-.food4 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    margin-left: 4%;
-    margin-top: 4%;
-}
-.price4 {
-    color: grey;
-    font-size: 18px;
-}
-
-.button-food4 {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: red;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.button-food4:hover{
-    opacity: 0.7;
-}
-
-.food5 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    margin-right: 43%;
-    margin-bottom: 70%;
-    margin-top: -250px;
-   
-}
-.price5 {
-    color: grey;
-    font-size: 18px;
-}
-
-.button-food5 {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: red;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.button-food5:hover{
-    opacity: 0.7;
-}
-
-.food6 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    margin-right: 12%;
-    margin-top: -88%;
-   
-}
-.price6 {
-    color: grey;
-    font-size: 18px;
-}
-
-.button-food6 {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: red;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.button-food6:hover{
-    opacity: 0.7;
-}
-
-.food7 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    margin-left: 4%;
-    margin-top: 5%;
-   
-}
-.price7 {
-    color: grey;
-    font-size: 18px;
-}
-
-.button-food7 {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: red;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.button-food7:hover{
-    opacity: 0.7;
-}
-
-.food8 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    margin-right: 43%;
-    margin-top: -18.5%;
-   
-}
-.price8 {
-    color: grey;
-    font-size: 18px;
-}
-
-.button-food8 {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: red;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.button-food8:hover{
-    opacity: 0.7;
-}
-
-
-.food9 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    margin-right: 12%;
-    margin-top: -18.5%;
-   
-}
-.price9 {
-    color: grey;
-    font-size: 18px;
-}
-
-.button-food9 {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: red;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-}
-.button-food9:hover{
-    opacity: 0.7;
-}
-
-#admin {
-    margin-left: 70px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
