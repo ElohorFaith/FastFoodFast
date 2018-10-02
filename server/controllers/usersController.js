@@ -1,4 +1,3 @@
-import uuidv4 from 'uuidv4';
 import db from '../config/dbConfig';
 import Helper from '../utils/Helper';
 
@@ -15,11 +14,10 @@ class user {
       });
     }
     const hashPassword = Helper.hashPassword(req.body.password);
-    const signupQuery = `INSERT INTO users(id, firstname, lastname, email, password)
-      VALUES($1, $2, $3, $4, $5)
+    const signupQuery = `INSERT INTO users(firstname, lastname, email, password)
+      VALUES($1, $2, $3, $4)
       returning * `;
     const values = [
-      uuidv4(),
       req.body.firstname,
       req.body.lastname,
       req.body.email,
@@ -35,7 +33,8 @@ class user {
       });
     } catch (error) {
       console.log('error-------', error);
-      if (error.routine === 'check id') {
+      // check if the email exist
+      if (error.routine === 'check unique') {
         return res.status(400).json({
           message: 'A User with same email exist',
         });

@@ -4,12 +4,12 @@ import db from '../config/dbConfig';
 const createOrdersTable = async () => {
   const client = await db.connect();
   try {
-    const orderModelQuery =  ` 
+    const orderModelQuery = ` 
     CREATE TABLE IF NOT EXISTS orders (
-    id UUID PRIMARY KEY, 
+    id SERIAL PRIMARY KEY, 
     quantity INTEGER NOT NULL,
-    userId UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
-    menuId UUID NOT NULL REFERENCES menu (id) ON DELETE CASCADE,
+    userId SERIAL NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+    menuId SERIAL NOT NULL REFERENCES menu (id) ON DELETE CASCADE,
     status VARCHAR(50) NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), 
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()

@@ -4,14 +4,12 @@ import createMenuTable from './menu';
 
 const createTables = async () => {
   try {
-   
-    const ordersTable = await createOrdersTable();
+    await createOrdersTable();
     console.log('Order Table Created');
-    const menuTable = await createMenuTable();
+    await createMenuTable();
     console.log('Menu Table Created');
-    const usersTable = await createUsersTable();
+    await createUsersTable();
     console.log('Users Table Created');
-
   } catch (err) {
     throw err;
   }

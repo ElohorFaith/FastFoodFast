@@ -15,7 +15,9 @@ const createUsersTable = async () => {
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), 
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )`;
-
+    await client.query(userModelQuery);
+  } catch (err) {
+    throw err;
   } finally {
     client.release();
   }
