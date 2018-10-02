@@ -13,5 +13,7 @@ router.post('/auth/login', user.signin);
 
 router.post('/menu', checkMenuInput, menuController.createMenu);
 
+router.get('/menu', checkMenuInput, menuController.getMenu);
+
 
 export default router;

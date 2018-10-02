@@ -27,5 +27,27 @@ class menuController {
       });
     });
   }
+
+  // get menu
+  static getMenu(req, res) {
+    (async () => {
+      try {
+        const getMenuQuery = 'SELECT * FROM menu';
+        const getQuery = await db.query(getMenuQuery);
+        return res.status(200).json({
+          menu,
+          message: 'fetch menu request successful',
+          Response: getQuery.rows,
+        });
+      } catch (error) {
+        throw error;
+      }
+    })().catch((err) => {
+      res.status(500).json({
+        message: 'server Error 500',
+        err,
+      });
+    });
+  }
 }
 export default menuController;
