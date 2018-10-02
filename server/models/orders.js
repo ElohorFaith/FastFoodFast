@@ -1,25 +1,25 @@
-const orders = [
-  {
-    id: 1,
-    name: 'palito',
-    price: 'N500',
-    status: 'pending',
-    date: new Date(),
-  },
-  {
-    id: 2,
-    name: 'shawarma',
-    price: '800',
-    status: 'completed',
-    date: new Date(),
-  },
-  {
-    id: 3,
-    name: 'burger',
-    price: 'N1500',
-    status: 'rejected',
-    date: new Date(),
-  },
-];
+import db from '../config/dbConfig';
 
-export default orders;
+// create order table
+const createOrdersTable = async () => {
+  const client = await db.connect();
+  try {
+    const orderModelQuery =  ` 
+    CREATE TABLE IF NOT EXISTS orders (
+    id UUID PRIMARY KEY, 
+    quantity INTEGER NOT NULL,
+    userId UUID NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+    menuId UUID NOT NULL REFERENCES menu (id) ON DELETE CASCADE,
+    status VARCHAR(50) NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), 
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+  )`;
+    await client.query(orderModelQuery);
+  } catch (err) {
+    throw err;
+  } finally {
+    client.release();
+  }
+};
+
+export default createOrdersTable;
