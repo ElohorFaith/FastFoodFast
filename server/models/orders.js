@@ -4,7 +4,7 @@ import db from '../config/dbConfig';
 const createOrdersTable = async () => {
   const client = await db.connect();
   try {
-    const orderModelQuery =  ` 
+    const orderModelQuery = ` 
     CREATE TABLE IF NOT EXISTS orders (
     id UUID PRIMARY KEY, 
     quantity INTEGER NOT NULL,

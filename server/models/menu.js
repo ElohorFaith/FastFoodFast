@@ -4,7 +4,7 @@ import db from '../config/dbConfig';
 const createMenuTable = async () => {
   const client = await db.connect();
   try {
-    const menuModelQuery =   `
+    const menuModelQuery = `
     CREATE TABLE IF NOT EXISTS menu (
     id UUID PRIMARY KEY, 
     name VARCHAR(40) NOT NULL,
@@ -19,4 +19,3 @@ const createMenuTable = async () => {
 };
 
 export default createMenuTable;
-
