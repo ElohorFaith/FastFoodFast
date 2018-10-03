@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+     <head>
+        <title>Fast-Food-Fast</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+     </head>
+    <body>
+      <div class="cart-modal">Thank you for ordering. Your order is been processed. <br/><br/>
+        <button class="centre" onclick="closeModal()">Close</button>
+      </div>
+      <div class='navbar' id='nav'>
+          <ul>
+              <li class="brand"><a href="">FastFoodFast</a></li>
+              <li><a class="" href="index.html">Home</a></li>
+              <li><a class="" href="order-page.html">Make Orders</a></li>
+              <li><a class="active" href="order-page.html">Hi,Elohor</a></li>
+          </ul>
+      </div>
+      <div class="section pretty">
+        <div class="menu-header-div">
+          <p class="menu-header">
+            Welcome To Cart
+          </p>
+        </div>
+        <div class="table-width">
+            <table class="order-history">
+                <tr>
+                  <th>Food Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Pizza</td>
+                  <td>1</td>
+                  <td>N700</td>
+                </tr>
+                <tr>
+                  <td>Waffles</td>
+                  <td>1</td>
+                  <td>N800</td>
+                </tr>
+                <tr>
+                  <td>Shawarma</td>
+                  <td>1</td>
+                  <td>N1500</td>
+                </tr>
+                <tr>
+                  <td>Vegetable Soup</td>
+                  <td>1</td>
+                  <td>N1200</td>
+                </tr>
+                <tr>
+                  <td>Egusi Soup</td>
+                  <td>1</td>
+                  <td>N1200</td>
+                </tr>
+                <tr>
+                  <td>Jollof Rice</td>
+                  <td>1</td>
+                  <td>N1000</td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td></td>
+                  <td>N1000</td>
+                </tr>
+        </div>
+      </div>
+      <div>
+      <button class="modalbtn" onclick="runModal()">CheckOut</button>
+      <script src="js/index.js"></script>
+    </body>
+</html>
