@@ -6,3 +6,12 @@ function myFunction() {
       x.className = "topnav";
   }
 }
+function runModal() {
+var modal = document.querySelector('.cart-modal');
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+var modal = document.querySelector('.cart-modal');
+    modal.style.display = 'none';
+}

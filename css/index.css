@@ -6,6 +6,43 @@
     font-family: Arial, Helvetica, sans-serif;
 
 }
+.cart-modal {
+    background-color: gray;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    padding-top: 5em;
+}
+
+.modalbtn {
+    position: relative;
+    top: 60vh; 
+    width: 10%;
+    height: 3em;
+    margin-left: 40%;
+    color: black;
+    background-color: orange;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.centre {
+    width: 10%;
+    height: 3em;
+    color: black;
+    background-color: orange;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
 .bg-pics {
     position: relative;
     width: 100%;
@@ -36,6 +73,25 @@
     color: white;
     font-size: 15px;
     margin-top: 15px;
+}
+.flex {
+    display: flex;
+}
+input[type="text"] {
+    padding: 1em;
+    border: 1px solid black;
+}
+.cart {
+    position: absolute;
+    left: 40em;
+    top: 0.6em;
+}
+.cart2 {
+    position: absolute;
+    left: 38.2em;
+    top: 2.0em;
+    z-index: 2;
+    color: red;
 }
 .menu-header-div {
     margin-top: 20px;
@@ -129,6 +185,9 @@ ul {
     padding: none;
     float:left;
 }
+td,th {
+    overflow-x: auto;
+}
 ul li {
     height: 30px;
     float: left;
@@ -211,6 +270,7 @@ li a:hover {
     width: 100%;
     margin: 20px auto;
 }
+
 .signup-para{
     padding-bottom: 10px;
     font-weight: bold;
@@ -229,10 +289,18 @@ li a:hover {
 }
 
 .order-button {
-    padding: 5px 10px
+    width: 30%;
+    height: 3em;
+    color: black;
+    background-color: orange;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 .order-btn {
-    width: 250px
+   
+   display: flex;
+
 }
 
 .sign-in {
@@ -420,9 +488,6 @@ tr:nth-child(even) {
  }
  
  
- #admin {
-     margin-left: 70px;
- }
 
  .order-food{
      width: 100%;
@@ -459,5 +524,28 @@ tr:nth-child(even) {
       display: block;
       margin: 0 3%;
   }
+  
+.cart {
+    position: absolute;
+    left: 16em;
+    z-index: 3;
 }
 
+
+.cart2 {
+    position: absolute;
+    left: 16.2em;
+}
+
+.modalbtn {
+    width: 8em;
+    top: 30.8em;
+}
+.centre {
+    width:8em;
+}
+.order-btn {
+    width: 20em;
+    display: block;
+}
+}
