@@ -10,10 +10,8 @@ class menuController {
       try {
         const menuQuery = `INSERT INTO menu (name, price)
         VALUES ($1, $2) RETURNING * `;
-
         const Query = await db.query(menuQuery, [name, price]);
         return res.status(201).json({
-          newMenu: menu,
           message: 'Menu created successfully',
           Response: Query.rows,
         });

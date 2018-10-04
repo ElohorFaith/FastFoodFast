@@ -6,7 +6,7 @@ const createMenuTable = async () => {
   try {
     const menuModelQuery = `
     CREATE TABLE IF NOT EXISTS menu (
-    id UUID PRIMARY KEY, 
+    id SERIAL PRIMARY KEY, 
     name VARCHAR(40) NOT NULL,
     price INTEGER NOT NULL
   )`;

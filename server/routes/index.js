@@ -1,9 +1,10 @@
 import express from 'express';
-import authent from '../middleware/Authent';
+import Auth from '../middleware/Auth';
 import user from '../controllers/usersController';
 import menuController from '../controllers/menuController';
 import checkMenuInput from '../middleware/menuInput';
-
+import checkOrderInput from '../middleware/orderInput';
+import orderController from '../controllers/orderController';
 
 const router = express.Router();
 
@@ -11,9 +12,11 @@ router.post('/auth/signup', user.signup);
 
 router.post('/auth/login', user.signin);
 
-router.post('/menu', checkMenuInput, menuController.createMenu);
+router.post('/menu', Auth.isAdmin, checkMenuInput, menuController.createMenu);
 
-router.get('/menu', checkMenuInput, menuController.getMenu);
+router.get('/menu', menuController.getMenu);
+
+router.post('/orders', Auth.isTokenValid, checkOrderInput, orderController.createOrder);
 
 
 export default router;

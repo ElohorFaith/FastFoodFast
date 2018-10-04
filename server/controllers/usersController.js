@@ -1,4 +1,3 @@
-import uuidv4 from 'uuidv4';
 import db from '../config/dbConfig';
 import Helper from '../utils/Helper';
 
@@ -15,26 +14,25 @@ class user {
       });
     }
     const hashPassword = Helper.hashPassword(req.body.password);
-    const signupQuery = `INSERT INTO users(id, firstname, lastname, email, password)
+    const signupQuery = `INSERT INTO users( firstname, lastname, email, userRole, password)
       VALUES($1, $2, $3, $4, $5)
       returning * `;
     const values = [
-      uuidv4(),
       req.body.firstname,
       req.body.lastname,
       req.body.email,
+      req.body.userRole = 'user',
       hashPassword,
     ];
 
     try {
       const { rows } = await db.query(signupQuery, values);
-      const token = Helper.generateToken(rows[0].id);
+      const token = Helper.generateToken(rows[0].id, req.body.userRole);
       return res.status(201).json({
         token,
         message: 'Successful',
       });
     } catch (error) {
-      console.log('error-------', error);
       if (error.routine === 'check id') {
         return res.status(400).json({
           message: 'A User with same email exist',
@@ -71,7 +69,7 @@ class user {
         });
       }
 
-      const token = Helper.generateToken(rows[0].id);
+      const token = Helper.generateToken(rows[0].id, rows[0].userrole);
       return res.status(200).json({
         token,
         message: 'Successful Login',
