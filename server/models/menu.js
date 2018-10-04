@@ -9,9 +9,10 @@ const createMenuTable = async () => {
     id SERIAL PRIMARY KEY, 
     name VARCHAR(40) NOT NULL,
     price INTEGER NOT NULL
-  )`;
+  );`;
     await client.query(menuModelQuery);
   } catch (err) {
+    console.log('err in menu', err);
     throw err;
   } finally {
     client.release();

@@ -33,7 +33,7 @@ class user {
         message: 'Successful',
       });
     } catch (error) {
-      if (error.routine === 'check id') {
+      if (error.routine === '_bt_check_unique') {
         return res.status(400).json({
           message: 'A User with same email exist',
         });

@@ -4,9 +4,9 @@ const checkOrderInput = (req, res, next) => {
     userId,
     menuId,
   } = req.body;
-  if (quantity === '' || userId === '' || menuId === '') {
+  if (!quantity || !menuId) {
     return res.status(400).json({
-      error: 'fill in the field',
+      error: 'fill in the required fields',
     });
   }
 

@@ -1,4 +1,3 @@
-import menu from '../models/menu';
 import db from '../config/dbConfig';
 
 
@@ -33,7 +32,6 @@ class menuController {
         const getMenuQuery = 'SELECT * FROM menu';
         const getQuery = await db.query(getMenuQuery);
         return res.status(200).json({
-          menu,
           message: 'fetch menu request successful',
           Response: getQuery.rows,
         });
