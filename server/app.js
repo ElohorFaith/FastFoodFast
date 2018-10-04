@@ -15,9 +15,10 @@ const app = express();
   }
 })();
 
-app.set('port', process.env.PORT || 5001);
+app.set('port', process.env.PORT || 5002);
 
 // use body parser to parse request
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/api/v1', router);
