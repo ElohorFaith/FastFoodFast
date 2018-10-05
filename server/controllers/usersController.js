@@ -30,7 +30,7 @@ class user {
       const token = Helper.generateToken(rows[0].id, req.body.userRole);
       return res.status(201).json({
         token,
-        message: 'Successful',
+        message: 'Successful signup',
       });
     } catch (error) {
       if (error.routine === '_bt_check_unique') {

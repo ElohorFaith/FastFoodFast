@@ -10,7 +10,7 @@ class orderController {
 
     const query = {
       text: 'INSERT INTO orders (quantity, userId, menuId, status) VALUES ($1, $2, $3, $4) RETURNING * ',
-      values: [quantity, req.user.id, menuId, status],
+      values: [JSON.stringify(quantity), req.user.id, JSON.stringify(menuId), status],
     };
 
     db.query(query, (err, result) => {
