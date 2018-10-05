@@ -24,6 +24,27 @@ class orderController {
       }
     });
   }
+
+  // get order
+  static getOrders(req, res) {
+    (async () => {
+      try {
+        const getOrdersQuery = 'SELECT * FROM orders';
+        const getQuery = await db.query(getOrdersQuery);
+        return res.status(200).json({
+          message: 'fetch orders request successful',
+          Response: getQuery.rows,
+        });
+      } catch (error) {
+        throw error;
+      }
+    })().catch((err) => {
+      res.status(500).json({
+        message: 'server Error 500',
+        err,
+      });
+    });
+  }
 }
 
 export default orderController;

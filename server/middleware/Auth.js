@@ -22,8 +22,12 @@ const Auth = {
       }
       req.user = { id: decoded.userId };
       next();
-    } catch (error) {
-      return res.status(400).send(error);
+    } catch (err) {
+      if (err.name === 'JsonWebTokenError') {
+        return res.status(401).json({
+          message: 'Invalid Token',
+        });
+      }
     }
   },
   async isAdmin(req, res, next) {

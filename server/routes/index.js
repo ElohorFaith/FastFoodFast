@@ -6,6 +6,7 @@ import checkMenuInput from '../middleware/menuInput';
 import checkOrderInput from '../middleware/orderInput';
 import orderController from '../controllers/orderController';
 
+
 const router = express.Router();
 
 router.post('/auth/signup', user.signup);
@@ -18,5 +19,6 @@ router.get('/menu', menuController.getMenu);
 
 router.post('/orders', Auth.isTokenValid, checkOrderInput, orderController.createOrder);
 
+router.get('/orders', Auth.isTokenValid, orderController.getOrders);
 
 export default router;
