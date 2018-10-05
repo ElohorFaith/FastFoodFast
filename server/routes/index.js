@@ -21,4 +21,6 @@ router.post('/orders', Auth.isTokenValid, checkOrderInput, orderController.creat
 
 router.get('/orders', Auth.isTokenValid, orderController.getOrders);
 
+router.get('/orders/:id', Auth.isTokenValid, orderController.getOneOrder);
+
 export default router;

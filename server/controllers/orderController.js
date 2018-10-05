@@ -45,6 +45,27 @@ class orderController {
       });
     });
   }
+
+  static getOneOrder(req, res) {
+    (async () => {
+      try {
+        const id = parseInt(req.params.id, 10);
+        const getOneOrderQuery = 'SELECT * FROM orders WHERE orders.id = $1';
+        const singleOrder = await db.query(getOneOrderQuery, [id]);
+        return res.status(200).json({
+          message: 'Single order fetch successful',
+          Response: singleOrder.rows[0],
+        });
+      } catch (error) {
+        throw error;
+      }
+    })().catch((err) => {
+      res.status(500).json({
+        message: 'server Error 500',
+        err,
+      });
+    });
+  }
 }
 
 export default orderController;
