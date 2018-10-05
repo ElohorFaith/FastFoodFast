@@ -6,14 +6,18 @@ import createTables from './models/index';
 
 const app = express();
 
-// logic to create menu, users and orders model
-(async () => {
-  try {
-    await createTables();
-  } catch (err) {
-    throw err;
-  }
-})();
+if (process.env.NODE_ENV !== 'test') {
+  // logic to create menu, users and orders model
+
+  (async () => {
+    try {
+      await createTables();
+    } catch (err) {
+      throw err;
+    }
+  })();
+}
+
 
 app.set('port', process.env.PORT || 5002);
 
