@@ -6,6 +6,7 @@
     font-family: Arial, Helvetica, sans-serif;
 
 }
+
 .cart-modal {
     background-color: gray;
     position: fixed;
@@ -19,18 +20,23 @@
     display: none;
     padding-top: 5em;
 }
-
+.cart:hover{
+    opacity: 0.7; 
+}
 .modalbtn {
     position: relative;
     top: 60vh; 
     width: 10%;
     height: 3em;
-    margin-left: 40%;
+    margin-left: 43%;
     color: black;
-    background-color: orange;
+    background-color: gray;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
+}
+.modalbtn:hover{
+    opacity: 0.7; 
 }
 
 .centre {
@@ -292,17 +298,29 @@ li a:hover {
     width: 30%;
     height: 3em;
     color: black;
-    background-color: orange;
+    background-color:seagreen;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
 }
-.order-btn {
-   
-   display: flex;
-
+.order-button:hover{
+    opacity: 0.7; 
 }
-
+.order-btn {
+     display: flex;
+}
+.add-btn{
+    background-color:seagreen;
+    width: 10%;
+    height: 2em;;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer; 
+    color: wheat
+}
+.add-btn:hover{
+    opacity: 0.7; 
+}
 .sign-in {
 	width: 320px;
 	height: 320px;
@@ -501,6 +519,7 @@ tr:nth-child(even) {
       float: right;
       display: block;
     }
+   
 }
 
 @media screen and (max-width: 600px) {
@@ -530,7 +549,6 @@ tr:nth-child(even) {
     left: 16em;
     z-index: 3;
 }
-
 
 .cart2 {
     position: absolute;
