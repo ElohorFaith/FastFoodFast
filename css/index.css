@@ -90,7 +90,7 @@ input[type="text"] {
 .cart {
     position: absolute;
     left: 40em;
-    top: 0.6em;
+    top: 0.1em;
 }
 .cart2 {
     position: absolute;
@@ -109,7 +109,7 @@ input[type="text"] {
 }
 
 .img-center {
-    width: 33%;
+    width: 30%;
     height: 150px;
 }
 .grid-container {
